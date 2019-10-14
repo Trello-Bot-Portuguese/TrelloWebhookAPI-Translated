@@ -1,0 +1,9 @@
+{
+	"apps": [
+		{
+			"name": "TrelloWebhookAPI",
+			"script": "npm",
+			"args": "start"
+		}
+	]
+}

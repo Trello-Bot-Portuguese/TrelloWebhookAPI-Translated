@@ -1,19 +1,19 @@
 # TrelloWebhookAPI
-Webhook reciever API for Trello Bot
+API receptora de webhooks para o Trello Brasil Bot
 
-# Requirements
+# Requirementos
 * RethinkDB
 * RedisDB
 * NodeJS
-* [TrelloBot](https://github.com/Trello-Bot-Community/TrelloBot)
-* [Turquoise](https://github.com/Trello-Bot-Community/Turquoise)
+* [TrelloBot](https://github.com/Trello-Bot-Portuguese/TrelloBot-Translated)
+* [Turquoise](https://github.com/Trello-Bot-Portuguese/Turquoise-Translated)
 
-# Installation
-* Clone the repo
-* Rename the _config.js to config.js and edit it to your liking.
-* Be sure to fill in the details for the Redis and Rethink databases.
-* **The recv_port needs to be publically exposed, if behind a firewall, ensure that the port is forwarded!**
-* Finally, run `npm install`
+# Instalação
+* Clone o repositório
+* Renomei o arquivo _config.js para config.js e edite com seus links.
+* Lembre-se de preencher os campos com as informações do RedisDB e RethinkDB.
+* **A recv_port precisa estar liberada publicamente. Caso você tenha um firewall, adicione esta porta na lista de exceções!**
+* Finalmente, execute `npm install`
 
-# Usage
-* Once you run the install command, you can start the program with `npm start`
+# Uso
+* Após executar o comando de instalação, você pode executar o programa usando `npm start`

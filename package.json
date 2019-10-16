@@ -1,11 +1,11 @@
 {
-  "name": "TrelloWebhookAPI",
+  "name": "trellowebhookapi",
   "description": "Trello Bot API",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-3.0",
-  "author": "Yamboy1 <yamboyd1@gmail.com>",
+  "author": "Lobo Metalúrgico",
   "contributors": [
-    "Snazzah"
+    "Snazzah", "Yamboy1 <yamboyd1@gmail.com>"
   ],
   "dependencies": {
     "bluebird": "^3.4.0",

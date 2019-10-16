@@ -12,6 +12,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
+ 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
@@ -49,9 +50,9 @@ module.exports = function(req, request, webhook, icon){
 					"title": `${req.body.action.memberCreator.fullName} renomeu o cartão \"${req.body.action.data.old.name}\" para \"${req.body.action.data.card.name}\"`,
 					"title_link": `https://trello.com/c/${req.body.action.data.card.shortLink}`,
 					"thumb_url": req.body.action.memberCreator.avatarHash ? "https://trello-avatars.s3.amazonaws.com/"+req.body.action.memberCreator.avatarHash+"/170.png" : undefined,
-					"text": `**Member**: ${req.body.action.memberCreator.fullName} (${req.body.action.memberCreator.username})
-**Old Card Name**: ${req.body.action.data.old.name}
-**Card**: [${req.body.action.data.card.name}](https://trello.com/c/${req.body.action.data.card.shortLink})`
+					"text": `**Membro**: ${req.body.action.memberCreator.fullName} (${req.body.action.memberCreator.username})
+**Nome Anterior**: ${req.body.action.data.old.name}
+**Cartão**: [${req.body.action.data.card.name}](https://trello.com/c/${req.body.action.data.card.shortLink})`
 				}
 			]
 		}

@@ -12,6 +12,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
+ 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
@@ -27,7 +28,7 @@ module.exports = function(req, request, webhook, icon){
 					"color": Colors.edit,
 	        "author_name": "Trello: "+req.body.model.name,
 					"author_icon": icon,
-					"title": `${req.body.action.memberCreator.fullName} renomeou a lista \"${req.body.action.data.old.name}\" to \"${req.body.action.data.list.name}\"`,
+					"title": `${req.body.action.memberCreator.fullName} renomeou a lista \"${req.body.action.data.old.name}\" para \"${req.body.action.data.list.name}\"`,
 					"title_link": req.body.model.url,
 					"thumb_url": req.body.action.memberCreator.avatarHash ? "https://trello-avatars.s3.amazonaws.com/"+req.body.action.memberCreator.avatarHash+"/170.png" : undefined,
 					"text": `**Membro**: ${req.body.action.memberCreator.fullName} (${req.body.action.memberCreator.username})`

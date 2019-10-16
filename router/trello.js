@@ -12,6 +12,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
+
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
@@ -93,12 +94,12 @@ let loadFunctions = function(){
 }
 
 rethink.connect({host: Config.ip, port: Config.port, user: Config.user, password: Config.password}, (err, conn) => {
-	console.log("Connected to rethink");
+	console.log("Conectado ao rethink");
 	if(err){ throw err; }
 	conn.use('Trello');
 	rdb = {r: rethink, conn: conn};
 	loadFunctions().then(() => {
-		console.log("Functions loaded");
+		console.log("Funções Carregadas");
 		takeRequests = true;
 	}).catch((e) => {throw e;});
 }).catch((e) => {throw e;});
@@ -106,13 +107,13 @@ rethink.connect({host: Config.ip, port: Config.port, user: Config.user, password
 router.post("/", (req, res) => {
   	if(takeRequests){
   		boardid = req.body.model.url.split('/')[4]
-		console.log('incoming request '+boardid)
+		console.log('Obtendo Requisição do Quadro: '+boardid)
 		Data.get.webhookBoard(boardid).then(webhookBoard =>{
 			if(webhookBoard == null){
-				console.log('got invalid request '+boardid)
+				console.log('Requisição Inválida do quadro '+boardid)
 				res.status(410).json({status: 410, message: "gone"});
 			}else if(Object.keys(webhookBoard).length <= 1){
-				console.log('got invalid request '+boardid)
+				console.log('Requisição Inválida do quadro '+boardid)
 				res.status(410).json({status: 410, message: "gone"});
 				Data.delete.webhookBoard(boardid);
 			}else{
@@ -137,7 +138,7 @@ router.post("/", (req, res) => {
 									console.log(e)
 								}
 							}else{
-								console.log("Couldn't find file for action", req.body.action.type)
+								console.log("Não foi possível encontrar o arquivo para essa ação", req.body.action.type)
 								console.log("=".repeat(20))
 								console.log(JSON.stringify(req.body))
 								console.log("=".repeat(20))
@@ -152,7 +153,7 @@ router.post("/", (req, res) => {
 									console.log(e)
 								}
 							}else{
-								console.log("Couldn't find file for action", req.body.action.type)
+								console.log("Não foi possível encontrar o arquivo para essa ação", req.body.action.type)
 								console.log("=".repeat(20))
 								console.log(JSON.stringify(req.body))
 								console.log("=".repeat(20))
@@ -163,7 +164,7 @@ router.post("/", (req, res) => {
 			}
 		});
   	}else{
-  		res.status(200).json({status: 200, message: "ok but still loading"});
+  		res.status(200).json({status: 200, message: "Ok, mas continua carregando..."});
   	}
 });
 

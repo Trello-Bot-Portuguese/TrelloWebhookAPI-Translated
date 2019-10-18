@@ -12,6 +12,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
+
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
@@ -84,5 +85,5 @@ app.use('/trellobeta', require('./router/trellobeta.js'));
 // Non-Ratelimited endpoints \\
 
 http.listen(config.recv_port, function(){
-	console.log(chalk.green(`listening on *:${config.recv_port}`));
+	console.log(chalk.green(`recebendo de *:${config.recv_port} (ip:porta)`));
 });

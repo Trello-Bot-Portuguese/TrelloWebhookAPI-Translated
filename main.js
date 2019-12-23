@@ -49,7 +49,7 @@ let buildLimit = function(path, method){
 		total: 25,
 		expire: 1*60*1000,
 		onRateLimited: function(req, res, next){
-			res.status(429).json({status: 429, error: "Too many requests, please try again later."});
+			res.status(429).json({status: 429, error: "Muitas tentativas de conexão. Tente novamente mais tarde."});
 		}
 	};
 };
